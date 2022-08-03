@@ -175,10 +175,11 @@
             $.getJSON(scriptUrl + '?opt=getclass', function (data) {
                 Object.keys(data).forEach(function (key) {
                     $('#select_class').append($('<optgroup>', {
-                        label: key
+                        label: key,
+                        id: key
                     }));
                     data[key].forEach(function (value) {
-                        $('#select_class optgroup').append($('<option>', {
+                        $('#select_class optgroup[id="'+key+'"]').append($('<option>', {
                             value: value,
                             text: value
                         }));
